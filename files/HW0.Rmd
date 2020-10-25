@@ -33,4 +33,4 @@ Although this work is specific, it is catchy for me since i used to play Wow. It
 This prediction is attractive compare to house pricing analysis as it has more variable. It shows the effect of each parameter on price with ggplot which increase the understanding of notebook by readers.
 
 
-   
+**For more related works with IE 582 please check [my progress journal](https://github.com/BU-IE-582/fall20-buraksimsekkk/blob/master/index.md)**
