@@ -1,6 +1,6 @@
 ## Welcome to Burak Simsek GitHub Pages
 
-This page shows [my progress journal](https://bu-ie-582.github.io/fall20-buraksimsekkk/) of IE 582 course at Bogaziçi University. 
+This page shows [my progress journal](https://bu-ie-582.github.io/fall20-buraksimsekkk/) of IE 582 course.
 
 ### Homework Assignment 0
 
