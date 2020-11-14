@@ -5,14 +5,12 @@ date: "11/14/2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE , warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-HOMEWORK 1
-##Burak Şimşek
 
-```{r }
+```{r libraries, warning=FALSE ,message=FALSE}
 #loading libraries
 library(ggplot2)
 library(dplyr)
