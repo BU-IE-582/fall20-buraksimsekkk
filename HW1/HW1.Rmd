@@ -1,0 +1,49 @@
+---
+title: "HW1"
+author: "Burak Şimşek - IE582 - Fall 2020"
+date: "11/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+HOMEWORK 1
+##Burak Şimşek
+
+```{r }
+#loading libraries
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+```
+
+#English Premier Leage Statistics from 2018-2019 season to 2020-2021 season
+
+```{r read data}
+#reading dataframes
+data2020=read.csv("https://github.com/BU-IE-582/fall20-buraksimsekkk/raw/master/HW1/2020-2021.csv")
+data2019=read.csv("https://github.com/BU-IE-582/fall20-buraksimsekkk/raw/master/HW1/2019-2020.csv")
+data2018=read.csv("https://github.com/BU-IE-582/fall20-buraksimsekkk/raw/master/HW1/2018-2019.csv")
+
+#combining datas
+all_data <- bind_rows(data2020 , data2019 , data2018)
+```
+
+
+##Task 1
+
+####First histogram shows the frequency of the goals of home team among 3 seasons.
+####Second histogram shows the frequency of the goals of home team among 3 seasons.
+####Third histogram shows the frequency of differance of the goals of home team and the goals of away team among 3 seasons.
+
+```{r histograms}
+#plotting histograms
+hist(all_data$FTHG , breaks=10, col="blue" , xlab="Home Team Goals", ylab="Number of Games", main="Home Team Goals Histogram" , xaxp=c(0,10,10) , yaxp=c(0,450,5)) 
+hist(all_data$FTAG , breaks=10, col="blue" , xlab="Away Team Goals", ylab="Number of Games", main="Away Team Goals Histogram" , xaxp=c(0,10,10))
+hist((all_data$FTHG - all_data$FTAG) , breaks=20, col="blue" , xlab="Home Team Goals - Away Team Goals", ylab="Number of Games", main=" Differance of Goals Histogram" , xaxp=c(-9,9,18) , yaxp=c(0,180,6) ) 
+```
+
+
+
