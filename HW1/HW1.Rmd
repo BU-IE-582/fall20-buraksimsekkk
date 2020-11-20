@@ -17,7 +17,7 @@ library(dplyr)
 library(tidyverse)
 ```
 
-#English Premier Leage Statistics from 2018-2019 season to 2020-2021 season
+# English Premier Leage Statistics from 2018-2019 season to 2020-2021 season
 
 ```{r read data, warning=FALSE ,message=FALSE}
 #reading dataframes
@@ -30,12 +30,12 @@ all_data <- bind_rows(data2020 , data2019 , data2018)
 ```
 
 
-##Task 1
-##Task 1.1
+## Task 1
+## Task 1.1
 
-####First histogram shows the frequency of the goals of home team among 3 seasons.
-####Second histogram shows the frequency of the goals of home team among 3 seasons.
-####Third histogram shows the frequency of differance of the goals of home team and the goals of away team among 3 seasons.
+#### First histogram shows the frequency of the goals of home team among 3 seasons.
+#### Second histogram shows the frequency of the goals of home team among 3 seasons.
+#### Third histogram shows the frequency of differance of the goals of home team and the goals of away team among 3 seasons.
 
 ```{r histograms}
 #plotting histograms
@@ -46,15 +46,15 @@ away_hist <- hist(all_data$FTAG , breaks=10, col="blue" , xlab="Away Team Goals"
 diff_hist <- hist((all_data$FTHG - all_data$FTAG) , breaks=20, col="blue" , xlab="Home Team Goals - Away Team Goals", ylab="Number of Games", main=" Differance of Goals Histogram" , xaxp=c(-9,9,18) , yaxp=c(0,180,6) ) 
 ```
 
-##Task 1.2
 
 
 
-##Task 2
+
+## Task 2
 
 
-##Task 2.1
-4 bookmakers are chosen and their home win, draw and away win probabilities; P(Home Win), P(Draw) and P(Away Win) respectively, will be calculated. 
+## Task 2.1
+Four bookmakers are chosen and their home win, draw and away win probabilities; P(Home Win), P(Draw) and P(Away Win) respectively, will be calculated. 
 
 
 ```{r bookmakers probability calculations, warning=FALSE ,message=FALSE}
@@ -79,9 +79,10 @@ probs  <- all_data %>% mutate( Home_prob_BWH = 1 / BWH,
 
 ```
 
-##Task 2.2
+## Task 2.2
 
-#Probability of home win, draw and away win are normalized.
+Probability of home win, draw and away win are normalized.
+
 
 ```{r normalization of probability, warning=FALSE ,message=FALSE}
 
@@ -104,11 +105,12 @@ normalized  <- probs %>% mutate( norm_BWH = Home_prob_BWH / (Home_prob_BWH + Dra
                              
 ```
 
-##Task 2.3
+## Task 2.3
 
-## For four bookmakers P(home win) - P(away win) on x-axis and P(tie) on y-axis are plotted.
+For four bookmakers P(home win) - P(away win) on x-axis and P(tie) on y-axis are plotted.
 
-```{r Ploting P(homewin) - P(away win), warning=FALSE ,message=FALSE}
+
+```{r Ploting P(homewin) - P(away win) vs P(tie) for BetAndWin, warning=FALSE ,message=FALSE}
 
 BW_probs <- normalized %>% select(FTR, norm_BWH, norm_BWD, norm_BWA) %>% mutate(norm_BW_HA = norm_BWH - norm_BWA, intervals = cut(norm_BW_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup()
 
@@ -131,7 +133,7 @@ ggplot(BW_probs) + geom_point(aes(x=norm_BW_HA, y=norm_BWD), color="purple") + g
 ```
 
 
-```{r Ploting Some Bookmaker1 P(homewin) - P(away win), warning=FALSE ,message=FALSE}
+```{r Ploting P(homewin) - P(away win) vs P(tie) for Bookmaker1, warning=FALSE ,message=FALSE}
 
 IW_probs <- normalized %>% select(FTR, norm_IWH, norm_IWD, norm_IWA) %>% mutate(norm_IW_HA = norm_IWH - norm_IWA, intervals = cut(norm_IW_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup()
 
@@ -152,7 +154,7 @@ ggplot(IW_probs) + geom_point(aes(x=norm_IW_HA, y=norm_IWD), color="yellow") + g
 
 ```
 
-```{r Ploting Pinnacle P(homewin) - P(away win), warning=FALSE ,message=FALSE}
+```{r Ploting P(homewin) - P(away win) vs P(tie) for Pinnacle, warning=FALSE ,message=FALSE}
 
 PS_probs <- normalized %>% select(FTR, norm_PSH, norm_PSD, norm_PSA) %>% mutate(norm_PS_HA = norm_PSH - norm_PSA, intervals = cut(norm_PS_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup()
 
@@ -173,7 +175,7 @@ ggplot(PS_probs) + geom_point(aes(x=norm_PS_HA, y=norm_PSD), color="darkblue") +
 
 ```
 
-```{r Ploting Some Bookmaker2 P(homewin) - P(away win), warning=FALSE ,message=FALSE}
+```{r Ploting P(homewin) - P(away win) vs P(tie) for Bookmaker 2, warning=FALSE ,message=FALSE}
 
 WH_probs <- normalized %>% select(FTR, norm_WHH, norm_WHD, norm_WHA) %>% mutate(norm_WH_HA = norm_WHH - norm_WHA, intervals = cut(norm_WH_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup()
 
@@ -194,14 +196,14 @@ ggplot(WH_probs) + geom_point(aes(x=norm_WH_HA, y=norm_WHD), color="green") + ge
 
 ```
 
-##Task3 
+## Task3 
 
 Red card might affect on game result. To observe effect of this, the games which red card occured are removed by filter function while selecting (HR=="0" & AR=="0").
 
 Then graphs on task 2 are plotted again to compare differances.
 
 
-```{r Ploting no red  , warning=FALSE ,message=FALSE}
+```{r Ploting P(homewin) - P(away win) vs P(tie) for BetAndWin no red, warning=FALSE ,message=FALSE}
 
 BW_no_red <- normalized %>% select(FTR, norm_BWH, norm_BWD, norm_BWA , HR , AR ) %>% mutate(norm_BW_HA = norm_BWH - norm_BWA, intervals = cut(norm_BW_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup() %>% filter(HR=="0" & AR=="0")
 
@@ -224,7 +226,7 @@ ggplot(BW_no_red) + geom_point(aes(x=norm_BW_HA, y=norm_BWD), color="purple") + 
 ```
 
 
-```{r Ploting no red  , warning=FALSE ,message=FALSE}
+```{r Ploting P(homewin) - P(away win) vs P(tie) for Bookmaker1 no red  , warning=FALSE ,message=FALSE}
 IW_no_red <- normalized %>% select(FTR, norm_IWH, norm_IWD, norm_IWA , HR , AR) %>% mutate(norm_IW_HA = norm_IWH - norm_IWA, intervals = cut(norm_IW_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup() %>% filter(HR=="0" & AR=="0")
 
 IW_no_red$intervals_number <- as.numeric(IW_no_red$intervals)
@@ -246,7 +248,7 @@ ggplot(IW_no_red) + geom_point(aes(x=norm_IW_HA, y=norm_IWD), color="yellow") + 
 
 
 
-```{r Ploting Pinnacle P(homewin) - P(away win), warning=FALSE ,message=FALSE}
+```{r P(homewin) - P(away win) vs P(tie) for Pinnacle, warning=FALSE ,message=FALSE}
 
 PS_no_red <- normalized %>% select(FTR, norm_PSH, norm_PSD, norm_PSA , HR , AR) %>% mutate(norm_PS_HA = norm_PSH - norm_PSA, intervals = cut(norm_PS_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup() %>% filter(HR=="0" & AR=="0")
 
@@ -268,7 +270,7 @@ ggplot(PS_no_red) + geom_point(aes(x=norm_PS_HA, y=norm_PSD), color="darkblue") 
 ```
 
 
-```{r Ploting Some Bookmaker2 P(homewin) - P(away win), warning=FALSE ,message=FALSE}
+```{r Ploting P(homewin) - P(away win) vs P(tie) for Bookmaker 2 no red , warning=FALSE ,message=FALSE}
 
 WH_no_red <- normalized %>% select(FTR, norm_WHH, norm_WHD, norm_WHA , HR , AR) %>% mutate(norm_WH_HA = norm_WHH - norm_WHA, intervals = cut(norm_WH_HA, breaks = seq(-1, 1, 0.2))) %>% group_by(intervals) %>% mutate(real_draws=sum(FTR=="D")/n()) %>% ungroup() %>% filter(HR=="0" & AR=="0")
 
