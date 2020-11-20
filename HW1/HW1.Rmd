@@ -107,7 +107,7 @@ normalized  <- probs %>% mutate( norm_BWH = Home_prob_BWH / (Home_prob_BWH + Dra
 
 ##Task 2.3
 
-### For four bookmakers P(home win) - P(away win) on x-axis and P(tie) on y-axis are plotted.
+## For four bookmakers P(home win) - P(away win) on x-axis and P(tie) on y-axis are plotted.
 
 ```{r Ploting P(homewin) - P(away win), warning=FALSE ,message=FALSE}
 
