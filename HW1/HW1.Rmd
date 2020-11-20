@@ -100,8 +100,7 @@ normalized  <- probs %>% mutate( norm_BWH = Home_prob_BWH / (Home_prob_BWH + Dra
                                   
                                  norm_WHH = Home_prob_WHH / (Home_prob_WHH + Draw_prob_WHD + Away_prob_WHA),
                                  norm_WHD = Draw_prob_WHD / (Home_prob_WHH + Draw_prob_WHD + Away_prob_WHA),
-                                 norm_WHA = Away_prob_WHA / (Home_prob_WHH + Draw_prob_WHD + Away_prob_WHA)  )      
-                        
+                                 norm_WHA = Away_prob_WHA / (Home_prob_WHH + Draw_prob_WHD + Away_prob_WHA)  )
                              
 ```
 
