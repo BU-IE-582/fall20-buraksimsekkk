@@ -15,6 +15,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(data.table)
+library(scatterplot3d)
 ```
 
 ```{r read data, warning=FALSE ,message=FALSE}
@@ -38,30 +39,134 @@ for(i in 1:8)
 ```
 
 
-```{r asd, warning=FALSE ,message=FALSE}
-for(i in 1:8){
-  gesture <- data.table(x=t(x_train[class_ind[i],2:315]), 
-                          y=t(y_train[class_ind[i],2:315]),
-                          z=t(z_train[class_ind[i],2:315]))
-asd<-cumsum(gesture)
-}
+```{r gesture1, warning=FALSE ,message=FALSE}
+
+  i=1
+  gesture1 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture1 <- cumsum(gesture1)
+  loc_gesture1 <- cumsum(vel_gesture1)
+  
+  
+    scatterplot3d(loc_gesture1$x.11,loc_gesture1$y.11,loc_gesture1$z.11,  main = "GESTURE 1",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
+
+
+```
+
+
+```{r gesture2, warning=FALSE ,message=FALSE}
+  
+  i=2
+  gesture2 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture2 <- cumsum(gesture2)
+  loc_gesture2 <- cumsum(vel_gesture2)
+  
+  
+    scatterplot3d(loc_gesture2$x.15,loc_gesture2$y.15,loc_gesture2$z.15,  main = "GESTURE 2",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
+
 
 ```
 
 
 
+```{r gesture3, warning=FALSE ,message=FALSE}
+  
+  i=3
+  gesture3 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture3 <- cumsum(gesture3)
+  loc_gesture3 <- cumsum(vel_gesture3)
+  
+  
+    scatterplot3d(loc_gesture3$x.4,loc_gesture3$y.4,loc_gesture3$z.4,  main = "GESTURE 3",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
 
 
+```
+
+```{r gesture4, warning=FALSE ,message=FALSE}
+  
+  i=4
+  gesture4 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture4 <- cumsum(gesture4)
+  loc_gesture4 <- cumsum(vel_gesture4)
+  
+  
+    scatterplot3d(loc_gesture4$x.5,loc_gesture4$y.5,loc_gesture4$z.5,  main = "GESTURE 4",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
 
 
+```
+
+```{r gesture5, warning=FALSE ,message=FALSE}
+  
+  i=5
+  gesture5 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture5 <- cumsum(gesture5)
+  loc_gesture5 <- cumsum(vel_gesture5)
+  
+  
+    scatterplot3d(loc_gesture5$x.2,loc_gesture5$y.2,loc_gesture5$z.2,  main = "GESTURE 5",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
 
 
+```
+```{r gesture6, warning=FALSE ,message=FALSE}
+  
+  i=6
+  gesture6 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture6 <- cumsum(gesture6)
+  loc_gesture6 <- cumsum(vel_gesture6)
+  
+  
+    scatterplot3d(loc_gesture6$x.1,loc_gesture6$y.1,loc_gesture6$z.1,  main = "GESTURE 6",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
 
 
+```
+
+```{r gesture7, warning=FALSE ,message=FALSE}
+  
+  i=7
+  gesture7 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture7 <- cumsum(gesture7)
+  loc_gesture7 <- cumsum(vel_gesture7)
+  
+  
+    scatterplot3d(loc_gesture7$x.7,loc_gesture7$y.7,loc_gesture7$z.7,  main = "GESTURE 7",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
 
 
+```
+```{r gesture8, warning=FALSE ,message=FALSE}
+  
+  i=8
+  gesture8 <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                         y=t(y_train[class_ind[i],2:315]),
+                         z=t(z_train[class_ind[i],2:315]))
+
+  vel_gesture8 <- cumsum(gesture8)
+  loc_gesture8 <- cumsum(vel_gesture8)
+  
+  
+    scatterplot3d(loc_gesture8$x.6,loc_gesture8$y.6,loc_gesture8$z.6,  main = "GESTURE 8",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "h")
 
 
+```
 
 
 
