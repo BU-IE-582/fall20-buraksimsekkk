@@ -383,8 +383,8 @@ In this particular example, it is tried to classified 8 different gesture. One o
 ```{r PARTD, warning=FALSE ,message=FALSE}
 
 
-all_data      <- cbind(x_train,y_train[,-1],z_train[,-1])
-all_data[,-1]  =scale(all[,-1])
+all_data<- cbind(x_train,y_train[,-1],z_train[,-1])
+all_data[,-1]=scale(all_data[,-1])
 
 distance = as.matrix(dist(all_data[,-1], method = "euclidean"))
 
