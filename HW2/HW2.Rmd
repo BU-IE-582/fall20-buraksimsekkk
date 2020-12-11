@@ -27,8 +27,8 @@ z_train=read.table("https://raw.githubusercontent.com/BU-IE-582/fall20-buraksims
 
 ```
 
-#PART A 
-#Read Data and Plot Gestures
+# PART A 
+###  Read Data and Plot Gestures
 
 Finding first indexes for each class.
 
@@ -147,8 +147,8 @@ To obtain gesture graph, firstly, data tables are made created for specified ind
     scatterplot3d(loc_gesture8$x.6,loc_gesture8$y.6,loc_gesture8$z.6,  main = "GESTURE 8",xlab = "X Location",ylab = "Y Location",zlab = "Z Location",col.axis="pink", col.grid="lightblue", color = "darkgreen", type = "p")
 
 ```
-#PART B
-#PCA Analysis and Ploting 2 Random Class Data
+# PART B
+###  PCA Analysis and Ploting 2 Random Class Data
 
 In this part raw data manipulated for long format.
 For each axis (x,y,z), location matrixes are found like part a.
@@ -352,8 +352,8 @@ print(ggplot(class_8) + geom_point(aes(x=time_index, y=line_15)) + geom_point(ae
 While, 4 of the graphs have similar, other 4 does not follow similar pattern. It supports the data that declared PCA with %54.
 
 
-#PART C
-#Appying PCA for Each Class Individually and Observe Similarities
+# PART C
+### Appying PCA for Each Class Individually and Observe Similarities
 
 Previously, PCA was applied for all data. In this part, PCA are applied for each class seperately.
 Variances covered by component 1 are between %42 and %65. It was %54 in previous part. It can be said that choosing all data or choosing class datas seperatesly does not change the result. Moreover, variances covered by component 1 and 2 is almost similar too.
@@ -375,8 +375,8 @@ cat("\n")}
 
 
 
-#PART D
-#Visualize classification by Using Reduce Dimentions in Time Series
+# PART D
+### Visualize classification by Using Reduce Dimentions in Time Series
 
 In this particular example, it is tried to classified 8 different gesture. One of the best method for classification is distance method. In this part, euclidean distance are applied to find distance between points and mapped on 2d plan. 
 
