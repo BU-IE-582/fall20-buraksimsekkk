@@ -1,4 +1,70 @@
-
+---
+title: "HW2"
+author: "Burak Şimşek - IE582 - Fall 2020"
+date: "12/5/2020"
+output: html_document
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries, warning=FALSE ,message=FALSE}
+#loading libraries
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(data.table)
+```
+
+```{r read data, warning=FALSE ,message=FALSE}
+#reading dataframes
+x_train=read.table("https://raw.githubusercontent.com/BU-IE-582/fall20-buraksimsekkk/master/HW2/uWaveGestureLibrary_X_TRAIN.txt")
+y_train=read.table("https://raw.githubusercontent.com/BU-IE-582/fall20-buraksimsekkk/master/HW2/uWaveGestureLibrary_Y_TRAIN.txt")
+z_train=read.table("https://raw.githubusercontent.com/BU-IE-582/fall20-buraksimsekkk/master/HW2/uWaveGestureLibrary_Z_TRAIN.txt")
+
+```
+
+```{r degistir, warning=FALSE ,message=FALSE}
+
+class_ind = c()
+
+for(i in 1:8) 
+  {
+  class_ind[i]  <-which(x_train$V1==i)[1]
+   
+  }
+
+```
+
+
+```{r asd, warning=FALSE ,message=FALSE}
+for(i in 1:8){
+  gesture <- data.table(x=t(x_train[class_ind[i],2:315]), 
+                          y=t(y_train[class_ind[i],2:315]),
+                          z=t(z_train[class_ind[i],2:315]))
+asd<-cumsum(gesture)
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
