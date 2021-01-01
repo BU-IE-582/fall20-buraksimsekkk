@@ -233,10 +233,12 @@ Average performance of penalized regression approaches gives %2.44 error rate wh
 ```{r Comparasion, warning=FALSE ,message=FALSE}
 
 
-boxplot(0.0776, 0.0365, 0.0426, Hourly_lrm_mape, lasso_mape, ylab="MAPE Comparision", xlab="Methods", names=c("Naive Lag48","Naive Lag168","Linear Reg","Hourly Reg","Penalized Reg"))
+boxplot(0.0776, 0.0365, 0.0438, Hourly_lrm_mape, lasso_mape, ylab="MAPE Comparision", xlab="Methods", names=c("Lag48","Lag168","LinearReg","HourlyReg","PenalizedReg"))
 
 
 ```
+
+
 When 5 different approach compared, the worst one is naive lag48 which misses many relation of model. Basic linear regression also couldn't find proper relations due to seasonalities. It becomes better on naive lag168 approach since it involves daily changes due to weekdays and weekends. In hourly regression, seasonality due to hours can be catched but values depends on old historical datas. At the end penalized regression gives best result since it both involves hourly and daily changes in the model.
 
 
