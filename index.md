@@ -13,3 +13,7 @@ This page shows [my progress journal](https://bu-ie-582.github.io/fall20-buraksi
 ### Homework Assignment 2
 
 - [Dimensionality Reduction for Time Series Data](https://bu-ie-582.github.io/fall20-buraksimsekkk/HW2/HW2.html)
+
+### Homework Assignment 3
+
+- [Penalized Regression Model](https://bu-ie-582.github.io/fall20-buraksimsekkk/HW3/HW3.html)
