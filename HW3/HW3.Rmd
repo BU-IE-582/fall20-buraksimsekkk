@@ -224,7 +224,7 @@ print(mean(lasso_mape[1:24]))
 
 ```
 
-Average performance of penalized regression approaches gives %2.44 error rate which is the best model so far. From all of these result, we can deduce that electricity usage depends on seasonilities of hours and days.
+Average performance of penalized regression approaches gives %2.44 error rate which is the best model so far. From all of these result, we can deduce that electricity usage depend on seasonilities of hours and days.
 
 
 # TASK F
