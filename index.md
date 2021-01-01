@@ -16,3 +16,4 @@ This page shows [my progress journal](https://bu-ie-582.github.io/fall20-buraksi
 
 ### Homework Assignment 3
 
+- [Penalized Regression Model](https://bu-ie-582.github.io/fall20-buraksimsekkk/HW3/HW3.html)
