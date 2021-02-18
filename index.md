@@ -20,7 +20,7 @@ This page shows [my progress journal](https://bu-ie-582.github.io/fall20-buraksi
 
 ### Homework Assignment 5
 
-- [knn Approach](https://bu-ie-582.github.io/fall20-buraksimsekkk/HWW5-uWaveGesture.html)
+- [knn Approach](https://bu-ie-582.github.io/fall20-buraksimsekkk/HW5/HW5-uWaveGesture.html)
 - [Logistic Regression](https://bu-ie-582.github.io/fall20-buraksimsekkk/HW5/HW5-ECG.html)
 
 ### Project
